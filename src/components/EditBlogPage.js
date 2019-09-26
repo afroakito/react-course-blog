@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BlogForm from './BlogForm';
-import { editBlog } from '../actions/blogs';
+import { editBlog, removeBlog } from '../actions/blogs';
 
 export class EditBlogPage extends React.Component {
     onSubmit = (blog) => {
         this.props.editBlog(blog.id, blog);
+        this.props.history.push('/');
+    };
+    onRemove = () => {
+        this.props.removeBlog({ id: this.props.blog.id });
         this.props.history.push('/');
     };
     render() {
@@ -13,7 +17,7 @@ export class EditBlogPage extends React.Component {
             <div>
                 <p>This is edit blog page</p>
                 <BlogForm blog={this.props.blog} onSubmit={this.onSubmit} />
-                <button>Remove Post</button>
+                <button onClick={this.onRemove}>Remove Post</button>
             </div>
         );
     }
@@ -27,7 +31,8 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        editBlog: (id, updates) => dispatch(editBlog(id, updates))
+        editBlog: (id, updates) => dispatch(editBlog(id, updates)),
+        removeBlog: ({ id }) => dispatch(removeBlog({ id }))
     };
 };
 

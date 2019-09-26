@@ -18,6 +18,10 @@ export default (state = blogsReducerDefaultState, action) => {
                     return blog;
                 }
             });
+        case 'REMOVE_BLOG':
+            return state.filter(({ id }) => {
+                return id !== action.id
+            });
         default:
             return state;
     }

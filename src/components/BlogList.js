@@ -16,8 +16,10 @@ export const BlogList = (props) => {
     );
 }
 
-const mapStateToProps = (state) => ({
-    blogs: state.blogs
-});
+const mapStateToProps = (state) => {
+    return {
+        blogs: state.blogs
+    };
+};
 
 export default connect(mapStateToProps)(BlogList);
