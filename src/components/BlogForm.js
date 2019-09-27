@@ -7,7 +7,6 @@ export default class BlogForm extends React.Component {
         this.state = {
             title: props.blog ? props.blog.title : '',
             body: props.blog ? props.blog.body : '',
-            id: props.blog ? props.blog.id : '',
             error: ''
         };
     };
@@ -22,8 +21,7 @@ export default class BlogForm extends React.Component {
 
             this.props.onSubmit({
                 title: this.state.title,
-                body: this.state.body,
-                id: this.state.id
+                body: this.state.body
             });
         };
     };

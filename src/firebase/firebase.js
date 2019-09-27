@@ -16,3 +16,9 @@ const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 export { firebase, googleAuthProvider, database as default };
+
+// database.ref().set({ name: 'Andrew', age: 27 });
+
+// database.ref().update({
+//   name: 'Mead'
+// })

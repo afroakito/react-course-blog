@@ -1,3 +1,5 @@
+import { bindActionCreators } from "redux";
+
 const blogsReducerDefaultState = [];
 
 export default (state = blogsReducerDefaultState, action) => {
@@ -22,6 +24,8 @@ export default (state = blogsReducerDefaultState, action) => {
             return state.filter(({ id }) => {
                 return id !== action.id
             });
+        case 'SET_BLOGS':
+            return action.blogs;
         default:
             return state;
     }
