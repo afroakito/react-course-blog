@@ -15,9 +15,15 @@ export class EditBlogPage extends React.Component {
     render() {
         return (
             <div>
-                <p>This is edit blog page</p>
-                <BlogForm blog={this.props.blog} onSubmit={this.onSubmit} />
-                <button onClick={this.onRemove}>Remove Post</button>
+                <div className="page-header">
+                    <div className="content-container">
+                        <h1 className="page-header__title">Edit blog</h1>
+                    </div>
+                </div>
+                <div className="content-container">
+                    <BlogForm blog={this.props.blog} onSubmit={this.onSubmit} />
+                    <button className="button button--secondary" onClick={this.onRemove}>Remove Post</button>
+                </div>
             </div>
         );
     }

@@ -1,7 +1,8 @@
 .input-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: $m-size;
+  // margin-top: $m-size;
+  // margin-bottom: $m-size;
   @media (min-width: $desktop-breakpoint) {
     flex-direction: row;
     margin-bottom: $l-size;

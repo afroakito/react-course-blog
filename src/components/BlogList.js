@@ -5,13 +5,17 @@ import BlogListItem from './BlogListItem';
 export const BlogList = (props) => {
     console.log(props.blogs);
     return (
-        <div>
-            <p>This is blog list section</p>
-            {
-                props.blogs.map((blog) => {
-                    return <BlogListItem key={blog.id} {...blog} />;
-                })
-            }
+        <div className="content-container">
+            <div className="list-header">
+                <div>Blog Post</div>
+            </div>
+            <div className="list-body">
+                {
+                    props.blogs.map((blog) => {
+                        return <BlogListItem key={blog.id} {...blog} />;
+                    })
+                }
+            </div>
         </div>
     );
 }

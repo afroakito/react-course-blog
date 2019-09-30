@@ -4,7 +4,6 @@ import { BlogListFilters } from './BlogListFilters';
 
 const BlogDashboardPage = () => (
   <div>
-    <p>Dashboard page content</p>
     <BlogListFilters />
     <BlogList />
   </div>
