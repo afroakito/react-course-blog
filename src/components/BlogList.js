@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BlogListItem from './BlogListItem';
+import selectBlogs from '../selectors/blogs';
 
 export const BlogList = (props) => {
-    console.log(props.blogs);
     return (
         <div className="content-container">
             <div className="list-header">
@@ -22,7 +22,7 @@ export const BlogList = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        blogs: state.blogs
+        blogs: selectBlogs(state.blogs, state.filters)
     };
 };
 
